@@ -18,9 +18,11 @@ class CreateEmployesTable extends Migration
             $table->string('name')->nullable();
             $table->integer('employe_id')->nullable();
             $table->string('image')->nullable();
-            $table->string('designation')->nullable();
-            $table->integer('mobile')->nullable();
-            $table->integer('or_mobile')->nullable();
+            $table->integer('designation')->nullable();
+            $table->integer('department')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('email')->nullable();
+            $table->string('or_mobile')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });

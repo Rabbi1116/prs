@@ -82,18 +82,7 @@
                     </div>
                 </form>
 
-                <div class="social-auth-links text-center mb-3">
-                    <p>- OR -</p>
-                    @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
-                    @endif
-
-                    <a href="viewregister" class="btn btn-block btn-danger">
-                        Register a new Employe
-                    </a>
-                </div>
+              
                 <!-- /.social-auth-links -->
 
 
