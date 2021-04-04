@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Area;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class AreaController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $area=Area::all();
-        return view('admin/employe/area',['area'=>$area]);
+        $showview=Project::all();
+
+        return view('admin/projects/project',['showview'=>$showview]);
     }
 
     /**
@@ -36,19 +37,24 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        $addarea=new Area();
-        $addarea->area=$request->area;
-        $addarea->save();
-        return back();
+       $projectadd =new Project();
+       $projectadd->project_title= $request->project;
+       $projectadd->created_at= date('d-m-Y H:i:s');
+       $projectadd->updated_at= date('d-m-Y H:i:s');
+       $projectadd->save();
+
+     
+
+       return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Area $area)
+    public function show(Project $project)
     {
         //
     }
@@ -56,10 +62,10 @@ class AreaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Area $area)
+    public function edit(Project $project)
     {
         //
     }
@@ -68,10 +74,10 @@ class AreaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Area $area)
+    public function update(Request $request, Project $project)
     {
         //
     }
@@ -79,12 +85,12 @@ class AreaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Area::find($id)->delete();
-        return back();
+        Project::find($id)->delete();
+        return redirect()->back();
     }
 }

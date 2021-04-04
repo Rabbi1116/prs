@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Area;
+use App\Models\Meeting;
 use Illuminate\Http\Request;
 
-class AreaController extends Controller
+class MeetingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $area=Area::all();
-        return view('admin/employe/area',['area'=>$area]);
+        //
     }
 
     /**
@@ -36,19 +35,16 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        $addarea=new Area();
-        $addarea->area=$request->area;
-        $addarea->save();
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Meeting  $meeting
      * @return \Illuminate\Http\Response
      */
-    public function show(Area $area)
+    public function show(Meeting $meeting)
     {
         //
     }
@@ -56,10 +52,10 @@ class AreaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Meeting  $meeting
      * @return \Illuminate\Http\Response
      */
-    public function edit(Area $area)
+    public function edit(Meeting $meeting)
     {
         //
     }
@@ -68,10 +64,10 @@ class AreaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Meeting  $meeting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Area $area)
+    public function update(Request $request, Meeting $meeting)
     {
         //
     }
@@ -79,12 +75,11 @@ class AreaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Meeting  $meeting
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Meeting $meeting)
     {
-        Area::find($id)->delete();
-        return back();
+        //
     }
 }

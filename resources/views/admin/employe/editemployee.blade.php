@@ -86,7 +86,7 @@ Edit
                 <hr>
                 <div class="row">
 
-                    <div class="col-8 offset-md-2 ">
+                    <div class="col-8 offset-md-3 ">
                         <button type="submit" class="btn btn-block btn-primary btn-sm "
                             style="background:#5711B2;">Update</button>
                     </div>

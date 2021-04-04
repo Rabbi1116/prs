@@ -37,7 +37,10 @@ Status
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$showstatus->title}}</td>
-                                    <td><a href="{{'deletstatus/'.$showstatus->id}}"> <button type="button" class="btn btn-block bg-gradient-danger btn-flat"><i class="fas fa-trash-alt"></i></button></a></td>
+                                    <td><a href="{{'deletstatus/'.$showstatus->id}}"
+                                            onclick="return confirm('Are you sure you want to delete?');"> <button
+                                                type="button" class="btn btn-block bg-gradient-danger btn-flat"><i
+                                                    class="fas fa-trash-alt"></i></button></a></td>
                                 </tr>
                                 @endforeach
 
@@ -61,11 +64,14 @@ Status
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($priority as $key => $showpriority)
+                                @foreach($priority as $key => $showpriority)
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$showpriority->prioritie}}</td>
-                                    <td><a href="{{'deletpriority/'.$showpriority->id}}"> <button type="button" class="btn btn-block bg-gradient-danger btn-flat"><i class="fas fa-trash-alt"></i></button></a></td>
+                                    <td><a href="{{'deletpriority/'.$showpriority->id}}"
+                                            onclick="return confirm('Are you sure you want to delete?');"> <button
+                                                type="button" class="btn btn-block bg-gradient-danger btn-flat"><i
+                                                    class="fas fa-trash-alt"></i></button></a></td>
                                 </tr>
                                 @endforeach
 
@@ -112,12 +118,7 @@ Status
                         </select>
                     </div>
                     <hr>
-
-
                 </div>
-
-
-
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>

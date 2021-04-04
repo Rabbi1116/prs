@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    
     <!-- Google Font: Source Sans Pro -->
 
     <link rel="stylesheet"
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="{{asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- JQVMap -->
     <link rel="stylesheet" href="{{asset('admin/plugins/jqvmap/jqvmap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
     <!-- overlayScrollbars -->
@@ -33,6 +35,16 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
+
+<style>
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 15px;
+    height: 38px;
+}
+</style>
 
 </head>
 
@@ -50,7 +62,7 @@
         @include('admin/include/menu')
 
         <!-- Content Wrapper. Contains page content -->
-        @include('sweet::alert')
+      
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
@@ -115,6 +127,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('admin/dist/js/demo.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{asset('admin/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
     <script src="{{asset('admin/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
     <script src="{{asset('admin/plugins/select2/js/select2.full.min.js')}}"></script>
     <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
@@ -177,6 +190,7 @@
         });
     });
     </script>
+ 
 
 </body>
 

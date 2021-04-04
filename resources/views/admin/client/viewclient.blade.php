@@ -122,7 +122,7 @@ Client
 
     <div class="card-header" style="background:#5711B2;">
 
-    <a href="{{'/clientdelete/'.$viewclients->id}}"> <button type="button" style="color: #fff;" class="btn btn-block btn-outline-danger btn-lg">Delete</button>
+    <a href="{{'/clientdelete/'.$viewclients->id}}" onclick="return confirm('Are you sure you want to delete?');"> <button type="button" style="color: #fff;" class="btn btn-block btn-outline-danger btn-lg">Delete</button>
                                         </a>
     </div>
      

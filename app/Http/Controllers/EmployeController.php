@@ -36,6 +36,16 @@ class EmployeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function view()
+    {
+
+        $designation= designation::all();
+        $department= Department::all();
+        
+       return view('admin/employe/addemploye',['department'=>$department,'designation'=>$designation]);
+    }
+
     public function create()
     {
         //
@@ -49,6 +59,13 @@ class EmployeController extends Controller
      */
     public function store(Request $req)
     {
+         
+        
+        $req->validate([
+            'email' => ['required','unique:users'],
+        ]);
+
+
         //   dd($req);
           $user= new User();
           $user->name=$req->name;
@@ -67,7 +84,7 @@ class EmployeController extends Controller
           $employe->designation=$req->designation;
           $employe->department=$req->department;
           $employe->save();
-          return redirect()->back();
+          return redirect('/viewregister');
     }
 
     /**
@@ -147,4 +164,6 @@ class EmployeController extends Controller
 
        return redirect()->back();
     }
+    
+    
 }

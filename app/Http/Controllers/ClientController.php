@@ -19,6 +19,13 @@ class ClientController extends Controller
         return view('admin/client/clientlist',['showclients'=>$clientview]);
     }
 
+    public function addview()
+    {
+       
+        
+        return view('admin/client/addclient');
+    }
+
     public function view($id)
     {
         $viewclients=Client::find($id);
@@ -45,13 +52,18 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'company_name'=>['required','unique:clients'],
+            'client_email'=>['required','unique:clients'],
+        ]);
+
         // dd($request->all());
 
         $addclient=new Client();
         $addclient->client_name=$request->clientname;
-        $addclient->company_name=$request->companyname;
+        $addclient->company_name=$request->company_name;
         $addclient->client_phone=$request->companyphone;
-        $addclient->client_email=$request->companyemail;
+        $addclient->client_email=$request->client_email;
         $addclient->contact_person=$request->contactpersonname;
         $addclient->contact_phone=$request->contactpersonphone;
         $addclient->contact_email=$request->contactpersonemail;
@@ -67,7 +79,7 @@ class ClientController extends Controller
 
         $addclient->save();
 
-        return redirect()->back();
+        return redirect('Client-list');
     }
 
     /**
@@ -106,9 +118,9 @@ class ClientController extends Controller
         // dd($request->id);
         $updateclient=Client::find($request->id);
         $updateclient->client_name=$request->clientname;
-        $updateclient->company_name=$request->companyname;
+        $updateclient->company_name=$request->company_name;
         $updateclient->client_phone=$request->companyphone;
-        $updateclient->client_email=$request->companyemail;
+        $updateclient->client_email=$request->client_email;
         $updateclient->contact_person=$request->contactpersonname;
         $updateclient->contact_phone=$request->contactpersonphone;
         $updateclient->contact_email=$request->contactpersonemail;
